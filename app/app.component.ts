@@ -18,7 +18,7 @@ export class AppComponent {
   selectedAnimal = null;
 
    masterAnimalList: Animal[] = [
-    new Animal('Fox', 'Moon', 2, 'Carnivore', 'Northern Trail', 5, 'Female', 'Cool shade', 'Loud noises'),
+    new Animal('Cat', 'Moon', 7, 'Carnivore', 'Northern Trail', 5, 'Female', 'Cool shade', 'Loud noises'),
     new Animal('Ocelot', 'Prince', 4, 'Carnivore', 'Tropical Rain Forest', 6, 'Male', 'Laying in the sunshine', 'Toys that are not rope-base'),
     new Animal('Black Tail Deer', 'Tinkerbell', 8, 'Herbivore', 'Northern Trail', 2, 'Female', 'Delicate Roots and leaves', 'Loud noises')
   ];

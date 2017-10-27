@@ -1,3 +1,15 @@
 h1 {
   text-align: center;
 }
+
+img {
+  height: 100px;
+}
+
+label {
+  text-align: left;
+}
+
+input {
+  text-align: justify;
+}

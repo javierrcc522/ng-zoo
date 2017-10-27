@@ -37,7 +37,4 @@ export class AnimalListComponent {
     this.filterByAge = optionFromMenu;
   }
 
-
-
-
 }

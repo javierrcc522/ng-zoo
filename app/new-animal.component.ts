@@ -5,38 +5,44 @@ import { Animal } from './animal.model';
   selector: 'new-animal',
   template: `
   <h1>Add a new animal to the local zoo:</h1>
-  <div>
-    <label>Species</label>
-    <input #newSpecies>
-    <label>Name</label>
-    <input #newName>
-    <label>Age</label>
-    <input #newAge>
-    <label>Diet</label>
-    <input #newDiet>
-    <label>Location</label>
-    <input #newLocation>
-    <label>Caretakers</label>
-    <input #newCaretakers>
-    <label>Sex</label>
-    <input #newSex>
-    <label>Likes</label>
-    <input #newLikes>
-    <label>Dislikes</label>
-    <input #newDislikes>
-
-
-    <button class="button" (click)="submitForm(
-      newSpecies.value,
-      newName.value,
-      newAge.value,
-      newDiet.value,
-      newLocation.value,
-      newCaretakers.value,
-      newSex.value,
-      newLikes.value,
-      newDislikes.value);">Add</button>
+  <div class="row">
+    <div class="col-sm-3">
+      <label>Enter Animal Species:</label>
+      <input #newSpecies>
+      <label>Enter Animal Name:</label>
+      <input #newName>
+      <label>Enter Animal Age:</label>
+      <input #newAge>
+    </div>
+    <div class="col-sm-3">
+      <label> Enter Animal Diet:</label>
+      <input #newDiet>
+      <label>Enter Animal Location:</label>
+      <input #newLocation>
+      <label>Enter Animal Caretakers:</label>
+      <input #newCaretakers>
+    </div>
+    <div class="col-sm-3">
+      <label>Enter Animal Sex:</label>
+      <input #newSex>
+      <label>Enter Animal Likes:</label>
+      <input #newLikes>
+      <label>Enter Animal Dislikes:</label>
+      <input #newDislikes>
+    </div>
   </div>
+      <button class="btn btn-success" (click)="submitForm(
+        newSpecies.value,
+        newName.value,
+        newAge.value,
+        newDiet.value,
+        newLocation.value,
+        newCaretakers.value,
+        newSex.value,
+        newLikes.value,
+        newDislikes.value);">Add</button>
+
+
   `
 })
 
