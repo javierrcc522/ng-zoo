@@ -10,7 +10,7 @@ import { Animal } from './animal.model';
       <option value="oldAnimals">Old</option>
     </select>
     <ul>
-      <li *ngFor="let currentAnimal of childAnimalList | completeness:filterByAge">{{currentAnimal.name}} {{currentKeg.species}} <img src='{{currentAnimal.graphic}}'>
+      <li *ngFor="let currentAnimal of childAnimalList | completeness:filterByAge">{{currentAnimal.name}} {{currentAnimal.species}} <img src='{{currentAnimal.graphic}}'>
         <button class="button" (click)="editAnimal(currentAnimal)">Edit!</button>
         <button class="button-delete" (click)="deleteAnimal(currentAnimal)">Delete!</button>
       </li>
@@ -37,9 +37,7 @@ export class AnimalListComponent {
     this.filterByAge = optionFromMenu;
   }
 
-  toggleEmpty(clickedAnimal: Animal, setCompleteness: boolean) {
-    clickedAnimal.empty = setCompleteness;
-  }
+
 
 
 }

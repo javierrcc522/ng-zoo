@@ -1,6 +1,4 @@
 export class Animal {
-  public empty: boolean = false;
-  graphic: string = "/resources/images/animal.png"
   constructor(
     public species: string,
     public name: string,
