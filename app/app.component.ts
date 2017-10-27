@@ -1,44 +1,44 @@
 import { Component } from '@angular/core';
-import { Animal } from './keg.model';
+import { Animal } from './animal.model';
 
 @Component({
   selector: 'app-root',
   template: `
   <div class="container">
-    <h1>The Tap Room</h1>
-    <keg-list [childKegList]="masterKegList" (clickSender)="editKeg($event)" (deleteButtonClickSender)="deleteKeg($event)"></keg-list>
+    <h1>Local Zoo</h1>
+    <animal-list [childAnimalList]="masterAnimalList" (clickSender)="editAnimal($event)" (deleteButtonClickSender)="deleteAnimal($event)"></animal-list>
       <hr>
-      <edit-keg [childSelectedKeg]="selectedKeg" (doneButtonClickedSender)="finishedEditing()"></edit-keg>
-      <new-keg (newKegSender)="addKeg($event)"></new-keg>
+      <edit-animal [childSelectedAnimal]="selectedAnimal" (doneButtonClickedSender)="finishedEditing()"></edit-animal>
+      <new-animal (newAnimalSender)="addAnimal($event)"></new-animal>
   </div>
   `
 })
 
 export class AppComponent {
-  selectedKeg = null;
+  selectedAnimal = null;
 
-   masterKegList: Keg[] = [
-    new Keg('Boneyard IPA', 'Boneyard', 5, 6, 124),
-    new Keg('Modelo Negra', 'Modelo', 3, 5, 124),
-    new Keg('Pilsner', 'Pfreim', 5, 6, 124)
+   masterAnimalList: Animal[] = [
+    new Animal('Artic Fox', 'Moon', 2, 'Carnivore', 'Northern Trail', 5, 'Female', 'Cool shade', 'Loud noises'),
+    new Animal('Ocelot', 'Prince', 4, 'Carnivore', 'Tropical Rain Forest', 6, 'Male', 'Laying in the sunshine', 'Toys that are not rope-base'),
+    new Animal('Black Tail Deer', 'Tinkerbell', 8, 'Herbivore', 'Northern Trail', 2, 'Female', 'Delicate Roots and leaves', 'Loud noises')
   ];
 
-  editKeg(clickedKeg) {
-    this.selectedKeg = clickedKeg;
+  editAnimal(clickedAnimal) {
+    this.selectedAnimal = clickedAnimal;
   }
 
-  deleteKeg(kegToDelete) {
-    if(kegToDelete === this.selectedKeg){
-      this.selectedKeg = null;
+  deleteAnimal(animalToDelete) {
+    if(animalToDelete === this.selectedAnimal){
+      this.selectedAnimal = null;
     }
-    this.masterKegList.splice(this.masterKegList.indexOf(kegToDelete), 1)
+    this.masterAnimalList.splice(this.masterAnimalList.indexOf(animalToDelete), 1)
   }
 
   finishedEditing() {
-    this.selectedKeg = null;
+    this.selectedAnimal = null;
   }
 
-  addKeg(newKegFromChild: Keg) {
-    this.masterKegList.push(newKegFromChild);
+  addAnimal(newAnimalFromChild: Animal) {
+    this.masterAnimalList.push(newAnimalFromChild);
   }
 }
